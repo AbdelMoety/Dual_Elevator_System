@@ -2,6 +2,12 @@
 
 Two STM32F401VE boards built from one codebase, communicating over SPI to coordinate a 4-floor elevator system. The Master board runs Elevator A and dispatches hall calls; the Slave board runs Elevator B and follows commands while maintaining autonomous fallback capability.
 
+## Proteus simulation
+
+![Proteus 8 schematic — Master and Slave STM32F401VE boards with SPI interconnect, cabin buttons, floor sensors, hall call buttons, and virtual terminals](proteus_simulation.png)
+
+The schematic shows both STM32F401VE boards side by side. The Slave (left) and Master (right) share SPI2 lines (PB12–PB15) connected at the centre. Each board has its own Virtual Terminal for UART telemetry output. Cabin buttons (F1–F4), floor sensors (F1–F4), hall call buttons (U1/D2/U2/D3/U3/D4), and the Emergency Stop switch are wired to Port D. The two red LEDs (D1, D2) on PA6 reflect PWM motor duty via TIM3 CH1.
+
 ## Repository structure
 
 | File | Purpose |
