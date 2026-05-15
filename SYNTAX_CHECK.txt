@@ -1,0 +1,13 @@
+Syntax check performed in this environment with clang target arm-none-eabi:
+
+MASTER role:
+clang --target=arm-none-eabi -mcpu=cortex-m4 -mthumb -DSTM32F401xE -DELEVATOR_ROLE_MASTER -fsyntax-only [project source files]
+Result: PASS
+
+SLAVE role:
+clang --target=arm-none-eabi -mcpu=cortex-m4 -mthumb -DSTM32F401xE -DELEVATOR_ROLE_SLAVE -fsyntax-only [project source files]
+Result: PASS
+
+Notes:
+- This environment does not contain arm-none-eabi-gcc, so HEX generation must be done on the user's PC with the installed Arm GNU toolchain.
+- Proteus simulation cannot be executed inside this environment.
